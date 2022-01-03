@@ -8,7 +8,6 @@
   @apply grid grid-cols-4 h-screen;
 }
 
-
 /* sidebar styles */
 .sidebar {
   @apply bg-dark-grey text-white p-6 relative;
