@@ -1,0 +1,63 @@
+/* import tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base app */
+.app-container {
+  @apply grid grid-cols-4 h-screen;
+}
+
+
+/* sidebar styles */
+.sidebar {
+  @apply bg-dark-grey text-white p-6 relative;
+}
+.sidebar__title {
+  @apply text-4xl pb-2 border-b-4 border-gray-500;
+}
+.sidebar__button-container {
+  @apply absolute bottom-0 right-0 w-full;
+}
+.sidebar__button {
+  @apply rounded-md  py-2 font-semibold block text-center m-6;
+}
+.sidebar__button--active {
+  @apply bg-action-green cursor-pointer text-dark-grey;
+}
+.sidebar__button--disabled {
+  @apply bg-light-grey cursor-not-allowed text-white;
+}
+.sidebar__list {
+  height: 80vh;
+  @apply overflow-y-auto;
+}
+.sidebar__list-item {
+  @apply flex my-4 grid cursor-move gap-4;
+  grid-template-columns: 20px 1fr 20px;
+}
+.sidebar__list-item--empty {
+  @apply my-8;
+}
+
+
+/* map styles */
+.map__container {
+  @apply h-screen col-span-3;
+}
+.map__marker {
+  @apply h-8 w-8 text-center leading-8 rounded-full bg-dark-grey text-white;
+}
+.map__line {
+  @apply stroke-route-blue;
+  stroke-width: 6;
+}
+
+
+/* icon styles */
+.icon__container {
+  @apply align-middle cursor-pointer;
+}
+.icon--grey {
+  @apply text-light-grey;
+}
