@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cross-country-route-planner/static/css/main.033a1e83.css",
+    "main.js": "/cross-country-route-planner/static/js/main.21079d52.js",
+    "static/js/787.58101341.chunk.js": "/cross-country-route-planner/static/js/787.58101341.chunk.js",
+    "index.html": "/cross-country-route-planner/index.html",
+    "main.033a1e83.css.map": "/cross-country-route-planner/static/css/main.033a1e83.css.map",
+    "main.21079d52.js.map": "/cross-country-route-planner/static/js/main.21079d52.js.map",
+    "787.58101341.chunk.js.map": "/cross-country-route-planner/static/js/787.58101341.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.033a1e83.css",
+    "static/js/main.21079d52.js"
+  ]
+}
