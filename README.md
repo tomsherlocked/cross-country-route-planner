@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Cross Country route planning app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A basic React App that enables users to plan cross country routes and download as GPX file.
 
-## Available Scripts
+### Tools used
 
-In the project directory, you can run:
+- `create-react-app` was used to bootstrap the basic React application
+- `pigeon-maps` was used to provide a basic map component
+  > Note: this was used a lightweight map library, not to provide full functionality. Waypoints, route drawing/ordering & GPX creation were developed
+- `tailwind CSS` was used as a utility library for CSS
 
-### `npm start`
+### Running locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- clone/unzip repo
+- Install packages with `npm i`
+- Start with `npm run start`.
+- Open a browser (tested in chrome), point at `localhost:3000`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Notes
 
-### `npm test`
+- Tailwind CSS was used as a utility library, allowing for more simple CSS prototyping, as well as defined variables for colours.
+- CSS was not scoped or managed using any third party libraries, due to the small size of the project. In a larger project I would use styled-components or a CSS preprocessor to manage styles. Instead, a standard BEM-style naming convention was used in a single CSS file (`index.css`)
+- The site is currently deployed with GitHub pages - available publically at [tomsherlock.info/cross-country-route-planner](https://tomsherlock.info/cross-country-route-planner/). The [corresponding git repository](https://github.com/tomsherlocked/cross-country-route-planner) also holds this code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Lessons learned
 
-### `npm run build`
+I initially created the application using the Mapbox JavaScript library without any react component wrappers, based on their [documentation guide](https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/). However, I found this to be heavyweight and cumbersome for what was a simple application, with limited functionality. I got bogged down in trying to integrate the more traditional DOM-manipulating `mapbox-gl-js` with the more modern React method of handling such code. I instead built the rest of the application then came back to the map, using the very lightweight `pigeon-maps` library to provide the basic functionality, then adding my own components to build lines and marker on top of it. This proved to be significantly more simple to implement, and I wished I'd chosen this option first!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I also chose to manage state in a simple way, due to basic nature of the application only requiring a single piece of state to be stored. Setting up a simple context provider to globally share the state of the waypoints allowed me to limit passing props down to child components, which kept the lower child components more simple.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Finally, this gave me an opportunity to use the native browser drag-and-drop API more - something I have only used in limited ways before.
